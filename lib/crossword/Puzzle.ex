@@ -4,17 +4,19 @@ defmodule Crossword.Puzzle do
     Enum.zip(puzzle["grid"], puzzle["gridnums"])
   end
 
-  def create_rows(grid) do
+  def create_rows(grid, grid_size) do
+    # grid_size = grid["size"]["cols"]
+    # grid_size = grid.size.cols
     grid_builder =
       Enum.reduce(grid, %{full_grid: [], curr_row: [], counter: 0}, fn tile, grid_build ->
         case grid_build.counter do
-          15 ->
+          ^grid_size ->
             grid_build
             |> Map.put(:full_grid, grid_build.full_grid ++ [grid_build.curr_row])
             |> Map.put(:counter, 1)
             |> Map.put(:curr_row, [%{letter: elem(tile, 0), clue_num: elem(tile, 1), guess: ""}])
 
-          x when x <= 14 ->
+          x when x <= grid_size - 1 ->
             grid_build
             |> Map.put(:counter, grid_build.counter + 1)
             |> Map.put(

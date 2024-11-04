@@ -12,7 +12,7 @@ defmodule CrosswordWeb.CrosswordLive do
       CrosswordAPI.get_puzzle(url)
 
     initial_grid = Puzzle.get_grid(puzzle)
-    formatted_grid = Puzzle.create_rows(initial_grid)
+    formatted_grid = Puzzle.create_rows(initial_grid, puzzle["size"]["cols"])
 
     {:ok,
      assign(socket,
