@@ -1,0 +1,4 @@
+zipped = Enum.zip(puzzle["grid"], puzzle["gridnums"])
+
+number = String.split(across, ".",  parts: 2)
+
