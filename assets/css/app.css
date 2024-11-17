@@ -1,5 +1,34 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 /* This file is for your main application CSS */
+
+.selected-tile-tb {
+  border-top: solid green 4px;
+  border-bottom: solid green 4px;
+}
+.selected-tile-lr {
+  border-left: solid green 4px;
+  border-right: solid green 4px;
+}
+.selected-tile-tbl {
+  border-top: solid green 4px;
+  border-bottom: solid green 4px;
+  border-left: solid green 4px;
+}
+.selected-tile-tbr {
+  border-top: solid green 4px;
+  border-bottom: solid green 4px;
+  border-right: solid green 4px;
+}
+.selected-tile-tlr {
+  border-top: solid green 4px;
+  border-left: solid green 4px;
+  border-right: solid green 4px;
+}
+.selected-tile-blr {
+  border-bottom: solid green 4px;
+  border-left: solid green 4px;
+  border-right: solid green 4px;
+}
